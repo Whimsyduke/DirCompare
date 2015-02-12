@@ -1,0 +1,64 @@
+﻿<Window x:Class="DirCompare.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="目录比较" Height="350" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="第一路径：" Grid.Column="0"/>
+                <TextBox x:Name="TextBox_FirstPath" Grid.Column="1" HorizontalAlignment="Stretch" TextChanged="TextBox_FirstPath_TextChanged"/>
+                <Button x:Name="Button_FirstPath" Grid.Column="2" Width="80" Click="Button_FirstPath_Click">
+                    设置路径
+                </Button>
+            </Grid>
+            <Grid Grid.Row="1" Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="第二路径：" Grid.Column="0"/>
+                <TextBox x:Name="TextBox_SecondPath" Grid.Column="1" HorizontalAlignment="Stretch" TextChanged="TextBox_SecondPath_TextChanged"/>
+                <Button x:Name="Button_SecondPath" Grid.Column="2" Width="80" Click="Button_SecondPath_Click">
+                设置路径
+                </Button>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <CheckBox x:Name="CheckBox_ShowFirstDir" Grid.Row="0" Content="显示第一目录中文件" Margin="5" VerticalAlignment="Center" IsEnabled="False" IsChecked="True" Checked="CheckBox_ShowFirstDir_Checked" Unchecked="CheckBox_ShowFirstDir_Checked"/>
+                <CheckBox x:Name="CheckBox_ShowSecondDir" Grid.Row="1" Content="显示第二目录中文件" Margin="5" VerticalAlignment="Center" IsEnabled="False" IsChecked="True" Checked="CheckBox_ShowSecondDir_Checked" Unchecked="CheckBox_ShowSecondDir_Checked"/>
+                <CheckBox x:Name="CheckBox_ShowSameDir" Grid.Row="2" Content="显示全部目录共有文件" Margin="5" VerticalAlignment="Center" IsEnabled="False" IsChecked="True" Checked="CheckBox_ShowSameDir_Checked" Unchecked="CheckBox_ShowSameDir_Checked"/>
+                <Button x:Name="Button_ShowTreeView" Grid.Row="0" Grid.Column="1" Click="Button_ShowTreeView_Click">
+                    显示目录
+                </Button>
+            </Grid>
+        </Grid>
+        <!--文件列表-->
+        <TreeView x:Name="TreeView_FileTreeView" Grid.Row="1">
+
+        </TreeView>
+    </Grid>
+</Window>
+ 
